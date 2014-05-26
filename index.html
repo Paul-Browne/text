@@ -140,13 +140,13 @@
     
     </script>
   </head>
-  <body onkeyup="hljs.initHighlightingOnLoad();">
+  <body>
     <div class="editable">
-      <pre><code id="scribble" onkeyup="storeUserScribble(this.id);" contenteditable></code></pre>
+      <pre><code id="scribble" onkeyup="storeUserScribble(this.id);hljs.initHighlightingOnLoad();" contenteditable></code></pre>
     </div>
     <script>
       getUserScribble();
     </script>
-    <!--<script>hljs.initHighlightingOnLoad();</script>-->
+    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
