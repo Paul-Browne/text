@@ -21,8 +21,29 @@
         background: #f4f4f4;
       }
     </style>
+    <script type="text/javascript">
+    
+      function storeUserScribble(id) {
+        var scribble = document.getElementById('scribble').innerHTML;
+        localStorage.setItem('userScribble',scribble);
+      }
+      
+      function getUserScribble() {
+        if ( localStorage.getItem('userScribble')) {
+          var scribble = localStorage.getItem('userScribble');
+        }
+        else {
+          var scribble = 'type...';
+        }
+        document.getElementById('scribble').innerHTML = scribble;
+      }
+    
+    </script>
   </head>
   <body>
-    <div class="editable" contenteditable></div>
+    <div id="scribble" class="editable" onkeyup="storeUserScribble(this.id);" contenteditable></div>
+    <script>
+      getUserScribble();
+    </script>
   </body>
 </html>
