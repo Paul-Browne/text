@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Text Editor</title>
     <style>
-      body {
+      body {margin:0;}
+      .editable {
         font-size:2rem;
         font-family:Helvetica;
         line-height:1.4;
@@ -16,6 +17,7 @@
       }
     </style>
   </head>
-  <body contenteditable>
+  <body>
+    <div class="editable" contenteditable></div>
   </body>
 </html>
