@@ -142,11 +142,19 @@
   </head>
   <body>
     <div class="editable">
-      <pre><code id="scribble" onkeyup="storeUserScribble(this.id);hljs.initHighlightingOnLoad(this.id);" contenteditable></code></pre>
+      <pre><code id="scribble" onkeyup="storeUserScribble(this.id);" contenteditable></code></pre>
     </div>
     <script>
       getUserScribble();
     </script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    code.onkeyup=function(){
+      hljs.initHighlightingOnLoad();
+    };
+    
+      
+      
+    </script>
+    <!--<script>hljs.initHighlightingOnLoad();</script>-->
   </body>
 </html>
