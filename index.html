@@ -38,8 +38,8 @@
     </script>
   </head>
   <body>
-    <div id="scribble" class="editable" onkeyup="storeUserScribble(this.id);" contenteditable>
-      <pre><code></code></pre>
+    <div class="editable">
+      <pre><code id="scribble" onkeyup="storeUserScribble(this.id);" contenteditable></code></pre>
     </div>
     <script>
       getUserScribble();
