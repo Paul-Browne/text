@@ -8,18 +8,15 @@
     <style>
       body {margin:0;}
       .editable {
-        background: #f0f0f0;
         outline: none;
-        font-size:2rem;
+        font-size:1.2rem;
         font-family:Helvetica;
         line-height:1.4;
         max-width:60rem;
         margin:0 auto;
-        padding:4rem;  
+        padding:3rem;  
       }
-      .editable:focus {
-        background: #f4f4f4;
-      }
+
     </style>
     <script type="text/javascript">
     
@@ -41,7 +38,9 @@
     </script>
   </head>
   <body>
-    <div id="scribble" class="editable" onkeyup="storeUserScribble(this.id);" contenteditable></div>
+    <div id="scribble" class="editable" onkeyup="storeUserScribble(this.id);" contenteditable>
+      <pre><code></code></pre>
+    </div>
     <script>
       getUserScribble();
     </script>
