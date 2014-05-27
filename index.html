@@ -123,26 +123,23 @@
     </style>
     <script type="text/javascript">
     
-      function a(id) {
-        var html = document.getElementById('html').innerHTML;
-        localStorage.setItem('b',html);
+      function storeUserScribble(){
+        var b=document.getElementById("main").innerHTML;
+        localStorage.setItem("userScribble",b)
+        
       }
-      
-      function getHtml() {
-        if ( localStorage.getItem('b')) {
-          var html = localStorage.getItem('b');
-        }
-        else {
-          var html = 'html...'
-        document.getElementById('html').innerHTML = html;
-        }
+      function getUserScribble(){
+        if(localStorage.getItem("userScribble"))
+        var a=localStorage.getItem("userScribble");
+        else var a="html...";
+        document.getElementById("main").innerHTML=a
       }
     
     </script>
   </head>
   <body>
     <div class="editable">
-      <pre><code id="html" onkeyup="a(this.id);" contenteditable></code></pre>
+      <pre><code id="main" onkeyup="storeUserScribble(this.id);" contenteditable></code></pre>
     </div>
     <div id="result">
     </div>
@@ -151,7 +148,7 @@
     
   
     <script>
-      getHtml();
+      getUserScribble();
     </script>
     <script>
       hljs.initHighlightingOnLoad();
