@@ -21,6 +21,7 @@
       .editable {
         display:block;
         position:relative;
+        float:left;
         outline: none;
         font-size:1.2rem;
         font-family:Helvetica;
@@ -49,9 +50,6 @@
   <body>
 
   <div class="clearfix">
-  
-    <textarea class="editable" type="text" id="main" onkeyup="storeUserScribble(this.id);bob();">
-    </textarea>
 
     <style class="editable" contenteditable>
       .torso {
@@ -62,7 +60,9 @@
     <script class="editable" contenteditable>
       console.log("hello world");
     </script>
-    
+      
+    <textarea class="editable" type="text" id="main" onkeyup="storeUserScribble(this.id);bob();"></textarea>
+
   </div>
     
     <div id="result"></div>
