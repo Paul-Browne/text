@@ -19,16 +19,16 @@
       }
       
       .editable {
-        font-family:"courier new";
         display:block;
         position:relative;
         float:left;
         outline: none;
-        font-size:1.2rem;
-        font-family:Helvetica;
+        font-size: 100%;
+        font-family: monospace;
         line-height:1.4;
-        width:32%;
+        margin:0;
         border: 0;
+        padding:0;
       }
     </style>
     <script>
@@ -81,11 +81,12 @@
 
   <div class="clearfix">
 
+    <textarea class="editable" type="text" id="the-html" onkeyup="storehtml(this.id);bob();"></textarea>
+
     <style class="editable" contenteditable id="the-style" onkeyup="storestyle(this.id);"></style>
     
     <script class="editable" contenteditable id="the-script" onkeyup="storescript(this.id);"></script>
       
-    <textarea class="editable" type="text" id="the-html" onkeyup="storehtml(this.id);bob();"></textarea>
 
   </div>
     
