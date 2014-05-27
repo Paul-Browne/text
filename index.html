@@ -123,35 +123,40 @@
     </style>
     <script type="text/javascript">
     
-      function storeUserScribble(id) {
-        var scribble = document.getElementById('scribble').innerHTML;
-        localStorage.setItem('userScribble',scribble);
+      function a(id) {
+        var html = document.getElementById('html').innerHTML;
+        localStorage.setItem('b',html);
       }
       
-      function getUserScribble() {
-        if ( localStorage.getItem('userScribble')) {
-          var scribble = localStorage.getItem('userScribble');
+      function getHtml() {
+        if ( localStorage.getItem('b')) {
+          var scribble = localStorage.getItem('b');
         }
         else {
-          var scribble = 'type...';
-        }
-        document.getElementById('scribble').innerHTML = scribble;
+          var html = 'html...'
+        document.getElementById('html').innerHTML = html;
       }
     
     </script>
   </head>
   <body>
     <div class="editable">
-      <pre><code id="scribble" onkeyup="storeUserScribble(this.id);" contenteditable></code></pre>
+      <pre><code id="html" onkeyup="a(this.id);" contenteditable></code></pre>
     </div>
-    <iframe src="https://rawgit.com/Paul-Browne/text/master/index.html">
-    </iframe>
+    <div id="result">
+      <script>
+        document.getElementById('html').innerHTML;
+      </script>
+    </div>
+    
+    
+    
+  
     <script>
-      getUserScribble();
+      getHtml();
     </script>
     <script>
       hljs.initHighlightingOnLoad();
     </script>
-    <!--<script>hljs.initHighlightingOnLoad();</script>-->
   </body>
 </html>
