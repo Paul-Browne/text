@@ -34,18 +34,14 @@
       }
     
     </script>
-        <script>
-    function bob() {
-      document.getElementById("result").innerHTML=document.getElementById('main').value;
-    }
-    </script> 
   </head>
   <body>
-      <div id="result">
-    </div>
+
   
-    <textarea class="editable" type="text" id="main" onkeyup="storeUserScribble(this.id);bob;" contenteditable>
+    <textarea class="editable" type="text" id="main" onkeyup="storeUserScribble(this.id);bob();" contenteditable>
     </textarea>
+    <div id="result">
+    </div>
 
     
     
@@ -54,6 +50,12 @@
     <script>
       getUserScribble();
     </script>
+    
+    <script>
+      function bob() {
+        document.getElementById("result").innerHTML=document.getElementById('main').value;
+      }
+    </script> 
  
   
   </body>
