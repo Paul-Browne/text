@@ -129,8 +129,9 @@
         var a=localStorage.getItem("userScribble");
         else var a="html...";
         document.getElementById("main").innerHTML=a;
-        document.getElementById("result").innerHTML=a;
       }
+      
+      document.getElementById("result").innerHTML=document.getElementById("main").innerHTML;
     
     </script>
   </head>
