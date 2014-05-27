@@ -8,12 +8,24 @@
     <title>Text Editor</title>
     <style>
       body {margin:0;}
+      
+      .clearfix:before,
+      .clearfix:after {
+        display: table;
+        content: " ";
+      }
+      .clearfix:after {
+        clear: both; 
+      }
+      
       .editable {
+        display:block;
+        position:relative;
         outline: none;
         font-size:1.2rem;
         font-family:Helvetica;
         line-height:1.4;
-        max-width:60rem;
+        width:33.333%;
         margin:0 auto;
         padding:3rem;
         border: 0;
@@ -37,22 +49,24 @@
   </head>
   <body>
 
+  <div class="clearfix">
   
     <textarea class="editable" type="text" id="main" onkeyup="storeUserScribble(this.id);bob();">
     </textarea>
-    <div id="result">
-    </div>
 
     <style style="display:block" contenteditable>
-      .torso{
+      .torso {
         color: red;
       }
-      
     </style>
     
     <script style="display:block;" contenteditable>
       console.log("hello world");
     </script>
+    
+  </div>
+    
+    <div id="result"></div>
   
     <script>
       getUserScribble();
