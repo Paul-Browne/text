@@ -145,9 +145,6 @@
       <pre><code id="html" onkeyup="a(this.id);" contenteditable></code></pre>
     </div>
     <div id="result">
-      <script>
-        document.getElementById('html').innerHTML;
-      </script>
     </div>
     
     
@@ -158,6 +155,9 @@
     </script>
     <script>
       hljs.initHighlightingOnLoad();
+    </script>
+    <script>
+      document.getElementById('html').innerHTML=result;
     </script>
   </body>
 </html>
