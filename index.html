@@ -36,9 +36,6 @@
   </head>
   <body>
     <div class="editable" id="main" onkeyup="storeUserScribble(this.id);" contenteditable>
-    <script>
-      document.getElementById("result").innerHTML=document.getElementById('main').innerHTML;
-    </script>
     </div>
     <div id="result">
     </div>
@@ -49,5 +46,9 @@
     <script>
       getUserScribble();
     </script>
+    <script>
+      document.getElementById("result").innerHTML=document.getElementById('main').innerHTML;
+    </script>  
+  
   </body>
 </html>
