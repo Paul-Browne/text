@@ -31,18 +31,48 @@
         border: 0;
       }
     </style>
-    <script type="text/javascript">
+    <script>
     
-      function storeUserScribble(){
-        var b=document.getElementById("main").value;
-        localStorage.setItem("userScribble",b)
+      function storehtml(){
+        var b=document.getElementById("the-html").value;
+        localStorage.setItem("userhtml",b)
         
       }
-      function getUserScribble(){
-        if(localStorage.getItem("userScribble"))
-        var a=localStorage.getItem("userScribble");
+      function gethtml(){
+        if(localStorage.getItem("userhtml"))
+        var a=localStorage.getItem("userhtml");
         else var a="html...";
-        document.getElementById("main").value=a;
+        document.getElementById("the-html").value=a;
+      }
+    
+    </script>
+    <script>
+    
+      function storestyle(){
+        var f=document.getElementById("the-style").innerHTML;
+        localStorage.setItem("userstyle",f)
+        
+      }
+      function getstyle(){
+        if(localStorage.getItem("userstyle"))
+        var e=localStorage.getItem("userstyle");
+        else var e=".torso { color: red; }";
+        document.getElementById("the-style").innerHTML=e;
+      }
+    
+    </script>
+    <script>
+    
+      function storescript(){
+        var d=document.getElementById("the-script").innerHTML;
+        localStorage.setItem("userscript",d)
+        
+      }
+      function getscript(){
+        if(localStorage.getItem("userscript"))
+        var c=localStorage.getItem("userscript");
+        else var c="console.log('hello world')";
+        document.getElementById("the-script").innerHTML=c;
       }
     
     </script>
@@ -51,24 +81,24 @@
 
   <div class="clearfix">
 
-    <style class="editable" contenteditable>
-      .torso {
-        color: red;
-      }
-    </style>
+    <style class="editable" contenteditable id="ths-style" onkeyup="storestyle(this.id);bob();"></style>
     
-    <script class="editable" contenteditable>
-      console.log("hello world");
-    </script>
+    <script class="editable" contenteditable id="ths-script" onkeyup="storescript(this.id);bob();"></script>
       
-    <textarea class="editable" type="text" id="main" onkeyup="storeUserScribble(this.id);bob();"></textarea>
+    <textarea class="editable" type="text" id="the-html" onkeyup="storehtml(this.id);bob();"></textarea>
 
   </div>
     
     <div id="result"></div>
   
     <script>
-      getUserScribble();
+      gethtml();
+    </script>
+    <script>
+      getstyle();
+    </script>
+    <script>
+      getscript();
     </script>
     
     <script>
