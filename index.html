@@ -4,56 +4,28 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <!--<script src="js/highlight.packed.js"></script>-->
     <title>Text Editor</title>
     <style>
-      * { -webkit-box-sizing: border-box;
-	        -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-      } 
-      
+
       body {margin:0;}
-      
-      .clearfix:before,
-      .clearfix:after {
-        display: table;
-        content: " ";
-      }
-      .clearfix:after {
-        clear: both; 
-      }
-      
+
       .editable {
-        display:block;
-        position:relative;
-        float:left;
         outline: none;
-        font-size: 100%;
-        font-family: monospace;
+        font-size: 125%;
+        font-family: helvetica;
         line-height:1.4;
-        margin:0;
+        margin:0 auto;
         border: 0;
         padding:8px;
-        height:500px;
-      }
-      #the-html{
-        width:42%;
+        width:85%;
       	background: beige;
       }
-      #the-style{
-        width:32%;
-        background: azure;
-      }
-      #the-script{
-        width:26%;
-        background: honeydew;
-      }
-      
+
     </style>
     <script>
     
       function storehtml(){
-        var b=document.getElementById("the-html").value;
+        var b=document.getElementById("the-html").innerHTML;
         localStorage.setItem("userhtml",b)
         
       }
@@ -61,72 +33,25 @@
         if(localStorage.getItem("userhtml"))
         var a=localStorage.getItem("userhtml");
         else var a="html...";
-        document.getElementById("the-html").value=a;
+        document.getElementById("the-html").innerHTML=a;
       }
     
     </script>
-    <script>
-    
-      function storestyle(){
-        var f=document.getElementById("the-style").innerHTML;
-        localStorage.setItem("userstyle",f)
-        
-      }
-      function getstyle(){
-        if(localStorage.getItem("userstyle"))
-        var e=localStorage.getItem("userstyle");
-        else var e=".torso { color: red; }";
-        document.getElementById("the-style").innerHTML=e;
-      }
-    
-    </script>
-    <script>
-    
-      function storescript(){
-        var d=document.getElementById("the-script").innerHTML;
-        localStorage.setItem("userscript",d)
-        
-      }
-      function getscript(){
-        if(localStorage.getItem("userscript"))
-        var c=localStorage.getItem("userscript");
-        else var c="console.log('hello world');";
-        document.getElementById("the-script").innerHTML=c;
-      }
-    
-    </script>
+
   </head>
   <body>
 
-  <div class="clearfix">
 
-    <textarea class="editable" type="text" id="the-html" onkeyup="storehtml(this.id);bob();"></textarea>
 
-    <style class="editable" contenteditable id="the-style" onkeyup="storestyle(this.id);"></style>
+    <div class="editable" contenteditable="true" id="the-html" onkeyup="storehtml(this.id)"></div>
+
+
     
-    <script class="editable" contenteditable id="the-script" onkeyup="storescript(this.id);"></script>
-      
-
-  </div>
-    
-    <div id="result"></div>
   
     <script>
       gethtml();
     </script>
-    <script>
-      getstyle();
-    </script>
-    <script>
-      getscript();
-    </script>
-    
-    <script>
-      function bob() {
-        document.getElementById("result").innerHTML=document.getElementById('the-html').value;
-      }
-    </script> 
- 
+
   
   </body>
 </html>
