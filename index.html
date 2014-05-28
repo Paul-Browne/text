@@ -32,7 +32,7 @@
       function gethtml(){
         if(localStorage.getItem("userhtml"))
         var a=localStorage.getItem("userhtml");
-        else var a="html...";
+        else var a="write...";
         document.getElementById("the-html").innerHTML=a;
       }
     
@@ -42,9 +42,10 @@
   <body>
 
 
-
-    <div class="editable" contenteditable="true" id="the-html" onkeyup="storehtml(this.id)"></div>
-
+  <div id="the-html" onkeyup="storehtml(this.id)">
+    <div class="editable" contenteditable="true" ></div>
+    <div class="editable" contenteditable="true" ></div>
+  </div>
 
     
   
