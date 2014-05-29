@@ -4,16 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link src=""
     <title>Text Editor</title>
     <style>
 
-      body {
-        margin:0;
-        background: black;
-        color: white;
-      }
+      body { margin:0;}
 
       .editable {
+        border: 0;
+        margin: 0;
         outline: none;
         font-size: 100%;
         font-family: helvetica;
@@ -28,7 +27,7 @@
     <script>
     
       function storehtml(){
-        var b=document.getElementById("the-html").innerHTML;
+        var b=document.getElementById("the-html").value;
         localStorage.setItem("userhtml",b)
         
       }
@@ -36,7 +35,7 @@
         if(localStorage.getItem("userhtml"))
         var a=localStorage.getItem("userhtml");
         else var a="write...";
-        document.getElementById("the-html").innerHTML=a;
+        document.getElementById("the-html").value=a;
       }
     
     </script>
@@ -46,13 +45,20 @@
 
 
   <div>
-    <div class="editable" contenteditable="true" id="the-html" onkeyup="storehtml(this.id)"></div>
+    <textarea class="editable" id="the-html" onkeyup="storehtml(this.id);liveview();"></textarea>
   </div>
+  
+  <div id="result"></div>
 
     
   
     <script>
       gethtml();
+    </script>
+    <script>
+    function liveview(){
+      document.getElementById("result").innerHTML=document.getElementById("the-html").value
+    }
     </script>
 
   
