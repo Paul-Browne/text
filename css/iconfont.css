@@ -410,9 +410,6 @@ content: '\22';
 q:before {
 content: '\201c';
 }
-.center-text {
-text-align: center;
-}
 img {
 margin-top: 0.4706em;
 margin-bottom: 0.7648em;
@@ -425,4 +422,7 @@ border: 0;
 .fluid-width-video-wrapper {
 margin-top: 0.4706em;
 margin-bottom: 0.7648em;
+}
+.center-text {
+text-align: center;
 }
