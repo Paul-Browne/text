@@ -46,7 +46,7 @@
 
 
   <div>
-    <textarea class="editable" id="the-html" onkeyup="storehtml(this.id);liveview();"></textarea>
+    <textarea class="editable" id="the-html" onkeyup="storehtml(this.id);liveview();$.jaygrid();"></textarea>
   </div>
   
   <div id="result"></div>
@@ -54,7 +54,6 @@
     
   
     <script>
-      $.jaygrid();
       gethtml();
       function liveview(){
         document.getElementById("result").innerHTML=document.getElementById("the-html").value
