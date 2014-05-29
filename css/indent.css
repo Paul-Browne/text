@@ -1,0 +1,72 @@
+@media only screen and (max-width: 655px) {
+.m-no-break > p {
+display: inline;
+}
+.m-no-break > p,
+.m-indent > p {
+margin-bottom: 0;
+}
+.m-no-break,
+.m-indent {
+margin-bottom: 1.5295em;
+}
+.m-no-break > p + [class*="m-col-"], 
+.m-no-break > p + .clearfix,
+.m-indent > p + [class*="m-col-"],
+.m-indent > p + .clearfix {
+margin-top: 1.5295em;
+}
+.m-indent > p + p,
+.m-indent > .clearfix + p,
+.m-indent > [class*="m-col-"] + p {
+text-indent: 2.5em;
+}
+}
+@media only screen and (min-width: 656px) and (max-width: 1023px) {
+.t-no-break > p {
+display: inline;
+}
+.t-no-break > p,
+.t-indent > p {
+margin-bottom: 0;
+}
+.t-no-break,
+.t-indent {
+margin-bottom: 1.5295em;
+}
+.t-no-break > p + [class*="t-col-"], 
+.t-no-break > p + .clearfix,
+.t-indent > p + [class*="t-col-"],
+.t-indent > p + .clearfix {
+margin-top: 1.5295em;
+}
+.t-indent > p + p,
+.t-indent > .clearfix + p,
+.t-indent > [class*="t-col-"] + p {
+text-indent: 2.5em;
+}
+}
+@media only screen and (min-width: 1024px) {
+.d-no-break > p {
+display: inline;
+}
+.d-no-break > p,
+.d-indent > p {
+margin-bottom: 0;
+}
+.d-no-break,
+.d-indent {
+margin-bottom: 1.5295em;
+}
+.d-no-break > p + [class*="d-col-"], 
+.d-no-break > p + .clearfix,
+.d-indent > p + [class*="d-col-"],
+.d-indent > p + .clearfix {
+margin-top: 1.5295em;
+}
+.d-indent > p + p,
+.d-indent > .clearfix + p,
+.d-indent > [class*="d-col-"] + p {
+text-indent: 2.5em;
+}
+}
