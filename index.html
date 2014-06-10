@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- add scripts -->
-    <script src="https://rawgit.com/Paul-Browne/jaygrid/master/js/jquery.jaygrid.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script src="https://rawgit.com/Paul-Browne/jaygrid/master/js/jquery.jaygrid.min.js"></script> <!-- add more scripts, if you need -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,600|Droid+Serif:400,400italic" rel="stylesheet" type="text/css">
-    <link href="css/compiled.css" rel='stylesheet' type='text/css'> <!-- add css -->
+    <link href="css/compiled.css" rel='stylesheet' type='text/css'> <!-- add more css, if you want -->
     <title>Framework Playground</title>
     <style>
     
@@ -50,7 +50,7 @@
       function gethtml(){
         if(localStorage.getItem("userhtml"))
         var a=localStorage.getItem("userhtml");
-        else var a="<div class='d-col-8-12 d-center'><h1 class='center-text'>edit this...</h1><p>Just write HTML markup as you normally would</p></div>";
+        else var a="<h1 class='center-text'>Edit this... like a boss!</h1>";
         document.getElementById("the-html").value=a;
       }
     
@@ -81,7 +81,8 @@
       $.jaygrid();
     </script>
     
-    should instead be added to the onkeyup event attached to the <textarea> -->
+    should instead be added to the onkeyup event attached to the <textarea>
+    as above, don't remove the first two.-->
 
   
   </body>
