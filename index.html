@@ -4,21 +4,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- add scripts -->
     <script src="https://rawgit.com/Paul-Browne/jaygrid/master/js/jquery.jaygrid.min.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,600|Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
-    <link href="css/compiled.css" rel='stylesheet' type='text/css'>
-    <title>Jaygrid Playground</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,600|Droid+Serif:400,400italic" rel="stylesheet" type="text/css">
+    <link href="css/compiled.css" rel='stylesheet' type='text/css'> <!-- add css -->
+    <title>Framework Playground</title>
     <style>
-
+    
+    /* Use .torso Instead of the body element i.e. 
+    
+      .torso {
+        background:#abcdef;
+      }
+      
+    */
+      
       body {
         margin:0;
       }
       
-      #result:hover {
-        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA0CAYAAABLolKXAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7CAAAOwgEVKEqAAAAAB3RJTUUH3gYKCTMLaHVFDAAAABtJREFUGNNjYGBgEGNiYGBgGDDi8OHDDAPqAgBvXwLGAlMewQAAAABJRU5ErkJggg==);
-      }
-
       .editable {
         white-space:nowrap;
         display:block;
@@ -35,10 +39,6 @@
         background:#f3f3f3;
       }
       
-      [class*="col-"]:hover {
-        background:rgba(0,0,0,0.1);
-      }
-
     </style>
     <script>
     
@@ -50,7 +50,7 @@
       function gethtml(){
         if(localStorage.getItem("userhtml"))
         var a=localStorage.getItem("userhtml");
-        else var a="<div class='d-col-1-3 d-center'<h1>edit this...</h1></div>";
+        else var a="<div class='d-col-8-12 d-center'><h1 class='center-text'>edit this...</h1><p>Just write HTML markup as you normally would</p>";
         document.getElementById("the-html").value=a;
       }
     
@@ -64,7 +64,7 @@
     <textarea class="editable" id="the-html" onkeyup="storehtml(this.id);liveview();$.jaygrid();"></textarea>
   </div>
   
-  <div id="result"></div>
+  <div id="result" class="torso"></div>
 
     
   
@@ -74,6 +74,14 @@
         document.getElementById("result").innerHTML=document.getElementById("the-html").value
       }
     </script>
+    
+    <!-- Any scripts that you would usually call before the closing body tag i.e.
+    
+    <script>
+      $.jaygrid();
+    </script>
+    
+    should instead be added to the onkeyup event attached to the <textarea> -->
 
   
   </body>
