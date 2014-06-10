@@ -50,7 +50,10 @@
       function gethtml(){
         if(localStorage.getItem("userhtml"))
         var a=localStorage.getItem("userhtml");
-        else var a="<div class='d-col-8-12 d-center'><h1 class='center-text'>edit this...</h1><p>Just write HTML markup as you normally would</p>";
+        else var a="<div class='d-col-8-12 d-center'>
+<h1 class='center-text'>edit this...</h1>
+<p>Just write HTML markup as you normally would</p>
+</div>";
         document.getElementById("the-html").value=a;
       }
     
