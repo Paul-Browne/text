@@ -17,11 +17,11 @@
     
       function storehtml(){
         var b=document.getElementById("stuff")[0].innerHTML;
-        localStorage.setItem("userhtml",b)
+        localStorage.setItem("content",b)
       }
       function gethtml(){
-        if(localStorage.getItem("userhtml")){
-        var a=localStorage.getItem("userhtml");
+        if(localStorage.getItem("content")){
+        var a=localStorage.getItem("content");
         }else {
           a = "make notes..."
         }
