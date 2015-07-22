@@ -19,6 +19,11 @@
         font-size: 1.2em;
         resize: none;
       }
+      #control {
+        position:absolute;
+        bottom:0;
+        right:0;
+      }
     </style>
     <script>
     
@@ -31,17 +36,21 @@
       	var downloadLink = document.createElement("a");
       	downloadLink.download = fileNameToSaveAs;
       	downloadLink.innerHTML = "Download File";
+      	/*
       	if (window.webkitURL != null)
       	{
       		downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
       	}
       	else
       	{
+      	*/
       		downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
       		downloadLink.onclick = destroyClickedElement;
       		downloadLink.style.display = "none";
       		document.body.appendChild(downloadLink);
+      	/*
       	}
+      	*/
       
       	downloadLink.click();
       }
@@ -84,12 +93,13 @@
   </head>
   <body>
   <textarea id="stuff" onkeyup="storehtml(this.id)"></textarea>
-  <input id="inputFileNameToSaveAs"></input>
-  <button onclick="saveTextAsFile()">Save Text to File</button>
-  <hr>
-  <input type="file" id="fileToLoad"></input>
-  <button onclick="loadFileAsText()">Load Selected File</button>
-    
+  <div id="control">
+    <input id="inputFileNameToSaveAs"></input>
+    <button onclick="saveTextAsFile()">Save Text to File</button>
+    <hr>
+    <input type="file" id="fileToLoad"></input>
+    <button onclick="loadFileAsText()">Load Selected File</button>
+  </div>
     <script>
       gethtml();
     </script>
